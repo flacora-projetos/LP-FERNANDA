@@ -4,6 +4,7 @@ import { ReactNode, useEffect, useState } from 'react';
 
 const WHATSAPP_NUMBER = "556296242626";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Olá, Fernanda! Quero entender melhor a gestão de tráfego para e-commerce.")}`;
+const FORM_LINK = "https://form.respondi.app/mZEV4eLq";
 
 const TikTokIcon = ({ className }: { className?: string }) => (
   <svg 
@@ -35,7 +36,7 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 function Button({ children, outline = false, className = "", showArrow = true }: { children: ReactNode, outline?: boolean, className?: string, showArrow?: boolean }) {
   return (
     <a
-      href={WHATSAPP_LINK}
+      href={FORM_LINK}
       target="_blank"
       rel="noopener noreferrer"
       className={`group inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-medium tracking-wide transition-all duration-300 hover:scale-[1.02] ${
@@ -85,7 +86,7 @@ export default function App() {
       {/* HEADER */}
       <header className={`fixed inset-x-0 top-0 z-50 flex items-center justify-between p-6 md:px-12 transition-all duration-300 ${isScrolled ? 'bg-surface/80 backdrop-blur-md shadow-sm py-4' : 'bg-transparent'}`}>
         <div className="font-display text-xl font-bold tracking-tight text-ink">@nandacora</div>
-        <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-ink hover:text-brand transition-colors">
+        <a href={FORM_LINK} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-ink hover:text-brand transition-colors">
           Solicitar diagnóstico
         </a>
       </header>
@@ -328,7 +329,7 @@ export default function App() {
             </div>
             <div className="shrink-0">
               <a
-                href={WHATSAPP_LINK}
+                href={FORM_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-white text-ink px-8 py-4 font-bold tracking-wide transition-all duration-300 hover:scale-[1.02] hover:bg-surface shadow-lg hover:shadow-white/20"
