@@ -97,18 +97,18 @@ export default function App() {
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-8 items-center">
             <FadeIn className="max-w-2xl">
               <span className="mb-4 inline-block rounded-full bg-brand/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand">
-                Tráfego Pago para E-commerce
+                Tráfego pago para e-commerce
               </span>
               <h1 className="mb-6 font-display text-4xl font-bold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl text-ink">
                 Tráfego pago para e-commerces que querem crescer com previsibilidade
               </h1>
               <p className="mb-8 text-lg text-ink/90 leading-relaxed md:text-xl">
-                Você já vende online, mas sente que o crescimento ainda depende de tentativa e erro? Eu ajudo e-commerces com produtos próprios a organizar tráfego, conversão e decisões para crescer com mais clareza.
+                Você já vende online, mas sente que o crescimento ainda depende de tentativa e erro? Ajudo e-commerces com produtos próprios a crescer com estrutura — não só investindo mais em anúncios.
               </p>
               
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <Button>
-                  Falar com a Fernanda
+                  Solicitar proposta
                 </Button>
               </div>
             </FadeIn>
@@ -146,16 +146,15 @@ export default function App() {
         <div className="mx-auto max-w-7xl px-6 md:px-12">
           <FadeIn>
             <h2 className="mb-12 max-w-2xl font-display text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">
-              Essa gestão é para o seu e-commerce se:
+              Esse serviço é para você se:
             </h2>
           </FadeIn>
           
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {[
-              "Você tem produtos próprios e já vende online.",
-              "Suas campanhas até trazem movimento, mas o crescimento ficou instável.",
-              "Você quer parar de depender de achismo para decidir onde investir.",
-              "Você precisa de uma parceira que olhe para tráfego, conversão e retenção."
+              "Você tem produtos próprios e já vende online, mas o crescimento ficou instável",
+              "Você quer parar de depender de achismo para decidir onde investir",
+              "Você precisa de uma parceria com método — não só alguém que executa campanha"
             ].map((item, index) => (
               <Fragment key={index}>
                 <FadeIn delay={0.1 * index}>
@@ -183,7 +182,7 @@ export default function App() {
                   O problema nem sempre está no anúncio
                 </h2>
                 <p className="mb-6 text-lg text-ink/90 leading-relaxed">
-                  Muitos e-commerces tentam vender mais criando novas campanhas, trocando criativos ou aumentando verba. Mas, quando a estrutura não está clara, o tráfego só acelera gargalos.
+                  Muitos e-commerces tentam vender mais criando novas campanhas, trocando criativos ou aumentando verba. Mas quando a estrutura não está clara, o tráfego só acelera os gargalos.
                 </p>
                 <p className="text-xl font-bold text-brand mt-8">
                   Anúncio ajuda. Método sustenta.
@@ -192,18 +191,16 @@ export default function App() {
             </div>
             
             <div className="lg:col-span-6 lg:col-start-7">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 h-full">
+              <div className="grid grid-cols-1 gap-4 h-full">
                 {[
-                  { title: "Público errado", desc: "Campanhas atraindo curiosos que não compram." },
-                  { title: "Página que não convence", desc: "A loja não transforma vistantes em intenção de compra." },
-                  { title: "Checkout com atrito", desc: "Muitas pessoas chegam no carrinho e desistem." },
-                  { title: "Falta de retenção", desc: "Os clientes compram uma vez e nunca mais voltam." }
+                  "Campanhas sem estratégia de funil",
+                  "Criativos que atraem, mas não convertem",
+                  "Verba aumenta, resultado não acompanha"
                 ].map((problem, i) => (
                   <Fragment key={i}>
                     <FadeIn delay={0.05 * i} className="h-full">
                       <div className="group h-full rounded-xl bg-[#EDE9DF] p-6 shadow-sm border border-black/5 hover:border-brand/20 hover:shadow-md transition-all duration-300 flex flex-col justify-center text-center cursor-default">
-                        <p className="text-base font-semibold text-ink group-hover:text-brand transition-colors mb-2">{problem.title}</p>
-                        <p className="text-sm text-ink-muted opacity-0 h-0 group-hover:opacity-100 group-hover:h-auto overflow-hidden transition-all duration-300 delay-75">{problem.desc}</p>
+                        <p className="text-lg font-semibold text-ink group-hover:text-brand transition-colors">{problem}</p>
                       </div>
                     </FadeIn>
                   </Fragment>
@@ -233,7 +230,7 @@ export default function App() {
               </div>
               <span className="mb-3 text-sm font-bold uppercase tracking-wider text-brand">1. Diagnóstico</span>
               <p className="text-ink/90 leading-relaxed max-w-[280px]">
-                Análise das campanhas, página, oferta e principais gargalos.
+                Mapeamos os gargalos do seu funil
               </p>
             </FadeIn>
 
@@ -241,9 +238,9 @@ export default function App() {
               <div className="mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-md border border-brand/10 text-brand transition-all duration-300 group-hover:scale-110 group-hover:bg-brand group-hover:text-white">
                 <TrendingUp className="h-8 w-8" />
               </div>
-              <span className="mb-3 text-sm font-bold uppercase tracking-wider text-brand">2. Plano de ação</span>
+              <span className="mb-3 text-sm font-bold uppercase tracking-wider text-brand">2. Estratégia</span>
               <p className="text-ink/90 leading-relaxed max-w-[280px]">
-                Definição dos ajustes mais importantes para melhorar conversão e investimento.
+                Anúncios com base na jornada do seu cliente
               </p>
             </FadeIn>
 
@@ -251,9 +248,9 @@ export default function App() {
               <div className="mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-md border border-brand/10 text-brand transition-all duration-300 group-hover:scale-110 group-hover:bg-brand group-hover:text-white">
                 <Users className="h-8 w-8" />
               </div>
-              <span className="mb-3 text-sm font-bold uppercase tracking-wider text-brand">3. Gestão e otimização</span>
+              <span className="mb-3 text-sm font-bold uppercase tracking-wider text-brand">3. Otimização</span>
               <p className="text-ink/90 leading-relaxed max-w-[280px]">
-                Acompanhamento dos dados para corrigir rota e buscar crescimento com mais previsibilidade.
+                Reports semanais e reuniões estratégicas
               </p>
             </FadeIn>
           </div>
@@ -278,7 +275,7 @@ export default function App() {
                 Processo validado para quem quer deixar o improviso de lado
               </h2>
               <p className="text-lg text-ink font-medium leading-relaxed">
-                A @nandacora atua com tráfego pago e estratégia digital para e-commerces que precisam construir uma estrutura sólida de faturamento, com acompanhamento próximo e foco em resultados reais.
+                A maioria das gestões começa e termina no gerenciador. Aqui o trabalho parte do funil inteiro — o que acontece antes do clique, na conversão e depois da venda.
               </p>
             </FadeIn>
           </div>
@@ -294,23 +291,23 @@ export default function App() {
               "Já faço tráfego pago. Por que mudar?"
             </h3>
             <div className="space-y-4 text-ink/90 text-lg">
-              <p>Porque vender mais não depende apenas de colocar dinheiro nas campanhas.</p>
+              <p>Porque resultado previsível não vem só de verba — vem de método.</p>
               <p>
-                Se a estrutura não acompanha — página fraca, checkout confuso ou falta de retenção —, parte do seu investimento se perde pelo caminho.
+                Sem estratégia de funil, você pode estar pagando para trazer tráfego que não converte, ou vendendo para clientes que não voltam.
               </p>
             </div>
           </FadeIn>
 
           <FadeIn className="text-center">
             <h2 className="mb-6 font-display text-3xl font-bold leading-tight md:text-5xl text-ink">
-              Vamos encontrar os gargalos do seu e-commerce?
+              Vamos estruturar o crescimento do seu e-commerce?
             </h2>
             <p className="mb-10 text-xl text-ink/90 max-w-2xl mx-auto">
-              Se você já vende online e quer crescer com mais clareza, fale comigo.
+              Se você já vende online e quer crescer com mais clareza, solicite uma proposta.
             </p>
             <div className="flex flex-col items-center gap-4">
               <Button className="w-full sm:w-auto px-12 py-5 text-base">
-                Falar com a Fernanda
+                Solicitar proposta
               </Button>
             </div>
           </FadeIn>
@@ -324,7 +321,7 @@ export default function App() {
           <FadeIn className="flex flex-col md:flex-row items-center justify-between gap-10 border-b border-white/10 pb-16">
             <div className="max-w-xl text-center md:text-left">
               <h2 className="mb-4 font-display text-2xl font-bold leading-tight md:text-4xl text-white">
-                Anúncio ajuda. Método sustenta.
+                Tráfego atrai. Estrutura converte. Método escala.
               </h2>
               <p className="text-surface/90 text-lg">
                 Gestão focada em conversão, retenção e clareza.
@@ -337,7 +334,7 @@ export default function App() {
                 rel="noopener noreferrer"
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-white text-ink px-8 py-4 font-bold tracking-wide transition-all duration-300 hover:scale-[1.02] hover:bg-surface shadow-lg hover:shadow-white/20"
               >
-                Quero falar com a Fernanda
+                Solicitar proposta
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </a>
             </div>
