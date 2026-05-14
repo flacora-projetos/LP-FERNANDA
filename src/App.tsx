@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { ArrowRight, BarChart3, CheckCircle2, ChevronRight, TrendingUp, Users, Instagram, Linkedin, MessageCircle } from 'lucide-react';
-import { ReactNode, useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState, Fragment } from 'react';
 
 const WHATSAPP_NUMBER = "556296242626";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Olá, Fernanda! Quero entender melhor a gestão de tráfego para e-commerce.")}`;
@@ -150,23 +150,24 @@ export default function App() {
             </h2>
           </FadeIn>
           
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {[
               "Você tem produtos próprios e já vende online.",
               "Suas campanhas até trazem movimento, mas o crescimento ficou instável.",
               "Você quer parar de depender de achismo para decidir onde investir.",
-              "Você precisa de uma parceira que olhe para tráfego, conversão e retenção.",
-              "Você busca direção estratégica, não apenas relatórios no fim do mês."
+              "Você precisa de uma parceira que olhe para tráfego, conversão e retenção."
             ].map((item, index) => (
-              <FadeIn key={index} delay={0.1 * index}>
-                <motion.div 
-                  whileHover={{ y: -5 }}
-                  className="group flex h-full items-start gap-4 rounded-2xl bg-white/5 p-6 border border-white/10 hover:border-brand-light/30 hover:bg-white/10 transition-colors shadow-sm hover:shadow-md"
-                >
-                  <CheckCircle2 className="h-6 w-6 shrink-0 text-brand mt-0.5 transition-transform duration-300 group-hover:scale-110 group-hover:text-brand-light" />
-                  <p className="text-lg text-surface/90 transition-colors group-hover:text-white">{item}</p>
-                </motion.div>
-              </FadeIn>
+              <Fragment key={index}>
+                <FadeIn delay={0.1 * index}>
+                  <motion.div 
+                    whileHover={{ y: -5 }}
+                    className="group flex h-full items-start gap-4 rounded-2xl bg-white/5 p-6 border border-white/10 hover:border-brand-light/30 hover:bg-white/10 transition-colors shadow-sm hover:shadow-md"
+                  >
+                    <CheckCircle2 className="h-6 w-6 shrink-0 text-brand mt-0.5 transition-transform duration-300 group-hover:scale-110 group-hover:text-brand-light" />
+                    <p className="text-lg text-surface/90 transition-colors group-hover:text-white">{item}</p>
+                  </motion.div>
+                </FadeIn>
+              </Fragment>
             ))}
           </div>
         </div>
@@ -198,12 +199,14 @@ export default function App() {
                   { title: "Checkout com atrito", desc: "Muitas pessoas chegam no carrinho e desistem." },
                   { title: "Falta de retenção", desc: "Os clientes compram uma vez e nunca mais voltam." }
                 ].map((problem, i) => (
-                  <FadeIn key={i} delay={0.05 * i} className="h-full">
-                    <div className="group h-full rounded-xl bg-[#EDE9DF] p-6 shadow-sm border border-black/5 hover:border-brand/20 hover:shadow-md transition-all duration-300 flex flex-col justify-center text-center cursor-default">
-                      <p className="text-base font-semibold text-ink group-hover:text-brand transition-colors mb-2">{problem.title}</p>
-                      <p className="text-sm text-ink-muted opacity-0 h-0 group-hover:opacity-100 group-hover:h-auto overflow-hidden transition-all duration-300 delay-75">{problem.desc}</p>
-                    </div>
-                  </FadeIn>
+                  <Fragment key={i}>
+                    <FadeIn delay={0.05 * i} className="h-full">
+                      <div className="group h-full rounded-xl bg-[#EDE9DF] p-6 shadow-sm border border-black/5 hover:border-brand/20 hover:shadow-md transition-all duration-300 flex flex-col justify-center text-center cursor-default">
+                        <p className="text-base font-semibold text-ink group-hover:text-brand transition-colors mb-2">{problem.title}</p>
+                        <p className="text-sm text-ink-muted opacity-0 h-0 group-hover:opacity-100 group-hover:h-auto overflow-hidden transition-all duration-300 delay-75">{problem.desc}</p>
+                      </div>
+                    </FadeIn>
+                  </Fragment>
                 ))}
               </div>
             </div>
