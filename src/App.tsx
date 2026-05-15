@@ -6,6 +6,18 @@ const WHATSAPP_NUMBER = "556296242626";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Olá, Fernanda! Quero entender melhor a gestão de tráfego para e-commerce.")}`;
 const FORM_LINK = "https://form.respondi.app/mZEV4eLq";
 
+const trackFormClick = () => {
+  if (typeof window !== 'undefined' && (window as any).fbq) {
+    (window as any).fbq('trackCustom', 'FormClick');
+  }
+};
+
+const trackWhatsAppClick = () => {
+  if (typeof window !== 'undefined' && (window as any).fbq) {
+    (window as any).fbq('trackCustom', 'WhatsAppClick');
+  }
+};
+
 const TikTokIcon = ({ className }: { className?: string }) => (
   <svg 
     xmlns="http://www.w3.org/2000/svg"
@@ -37,6 +49,7 @@ function Button({ children, outline = false, className = "", showArrow = true }:
   return (
     <a
       href={FORM_LINK}
+      onClick={trackFormClick}
       target="_blank"
       rel="noopener noreferrer"
       className={`group inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-medium tracking-wide transition-all duration-300 hover:scale-[1.02] ${
@@ -86,7 +99,7 @@ export default function App() {
       {/* HEADER */}
       <header className={`fixed inset-x-0 top-0 z-50 flex items-center justify-between p-6 md:px-12 transition-all duration-300 ${isScrolled ? 'bg-surface/80 backdrop-blur-md shadow-sm py-4' : 'bg-transparent'}`}>
         <div className="font-display text-xl font-bold tracking-tight text-ink">@nandacora</div>
-        <a href={FORM_LINK} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-ink hover:text-brand transition-colors">
+        <a href={FORM_LINK} onClick={trackFormClick} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-ink hover:text-brand transition-colors">
           Solicitar diagnóstico
         </a>
       </header>
@@ -330,6 +343,7 @@ export default function App() {
             <div className="shrink-0">
               <a
                 href={FORM_LINK}
+                onClick={trackFormClick}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-white text-ink px-8 py-4 font-bold tracking-wide transition-all duration-300 hover:scale-[1.02] hover:bg-surface shadow-lg hover:shadow-white/20"
@@ -373,6 +387,7 @@ export default function App() {
       {/* FLOATING WHATSAPP BUTTON */}
       <motion.a
         href={WHATSAPP_LINK}
+        onClick={trackWhatsAppClick}
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition-transform hover:scale-110 active:scale-95"
