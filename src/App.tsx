@@ -8,12 +8,14 @@ const FORM_LINK = "https://form.respondi.app/mZEV4eLq";
 
 const trackFormClick = () => {
   if (typeof window !== 'undefined' && (window as any).fbq) {
+    (window as any).fbq('track', 'Lead');
     (window as any).fbq('trackCustom', 'FormClick');
   }
 };
 
 const trackWhatsAppClick = () => {
   if (typeof window !== 'undefined' && (window as any).fbq) {
+    (window as any).fbq('track', 'Contact');
     (window as any).fbq('trackCustom', 'WhatsAppClick');
   }
 };
