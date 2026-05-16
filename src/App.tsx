@@ -1,23 +1,51 @@
 import { motion } from 'motion/react';
 import { ArrowRight, BarChart3, CheckCircle2, ChevronRight, TrendingUp, Users, Instagram, Linkedin, MessageCircle } from 'lucide-react';
 import { ReactNode, useEffect, useState, Fragment } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 const WHATSAPP_NUMBER = "556296242626";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Olá, Fernanda! Quero entender melhor a gestão de tráfego para e-commerce.")}`;
 const FORM_LINK = "https://form.respondi.app/mZEV4eLq";
 
-const trackFormClick = () => {
-  if (typeof window !== 'undefined' && (window as any).fbq) {
-    (window as any).fbq('track', 'Lead');
-    (window as any).fbq('trackCustom', 'FormClick');
+const sendMetaEventAPI = async (eventName: string, eventId: string) => {
+  try {
+    await fetch('/api/meta-event', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        eventName,
+        eventId,
+        eventUrl: window.location.href,
+        actionSource: 'website'
+      }),
+    });
+  } catch (error) {
+    console.error('Failed to send Meta conversion event:', error);
   }
 };
 
-const trackWhatsAppClick = () => {
+const trackFormClick = () => {
+  const eventId = uuidv4();
   if (typeof window !== 'undefined' && (window as any).fbq) {
-    (window as any).fbq('track', 'Contact');
-    (window as any).fbq('trackCustom', 'WhatsAppClick');
+    (window as any).fbq('track', 'Lead', {}, { eventID: eventId });
+    (window as any).fbq('trackCustom', 'FormClick', {}, { eventID: `${eventId}-custom` });
   }
+  
+  // Also send event via server-side Conversions API
+  sendMetaEventAPI('Lead', eventId);
+};
+
+const trackWhatsAppClick = () => {
+  const eventId = uuidv4();
+  if (typeof window !== 'undefined' && (window as any).fbq) {
+    (window as any).fbq('track', 'Contact', {}, { eventID: eventId });
+    (window as any).fbq('trackCustom', 'WhatsAppClick', {}, { eventID: `${eventId}-custom` });
+  }
+  
+  // Also send event via server-side Conversions API
+  sendMetaEventAPI('Contact', eventId);
 };
 
 const TikTokIcon = ({ className }: { className?: string }) => (
