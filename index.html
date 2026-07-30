@@ -1,9 +1,62 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gestão de Tráfego Estratégica</title>
+
+    <!-- Sinaliza para o CSS que há JavaScript: só então as seções abaixo da
+         dobra começam escondidas para animar no scroll. Precisa rodar antes do
+         primeiro paint, por isso fica inline e no topo do <head>.
+         Rede de segurança: se o bundle não hidratar em 4s (falha de rede, erro
+         de JS), a classe é removida e todo o conteúdo volta a aparecer. -->
+    <script>
+      document.documentElement.classList.add('js');
+      setTimeout(function () {
+        if (!document.documentElement.dataset.hydrated) {
+          document.documentElement.classList.remove('js');
+        }
+      }, 4000);
+    </script>
+
+    <title>Gestão de Tráfego Pago para E-commerce | @nandacora</title>
+    <meta name="description" content="Gestão de tráfego pago para e-commerces com produtos próprios que querem crescer com previsibilidade. Diagnóstico de funil, estratégia de campanhas e otimização contínua." />
+    <link rel="canonical" href="https://www.nandacora.com.br/" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="author" content="Fernanda (@nandacora)" />
+    <meta name="theme-color" content="#F7F4EF" />
+
+    <!-- Google Search Console -->
+    <meta name="google-site-verification" content="6SLxXTZzu4BzfxCVm13PJ5x7y386Xi62zBH9fYt5UKk" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Nandacora" />
+    <meta property="og:url" content="https://www.nandacora.com.br/" />
+    <meta property="og:title" content="Gestão de Tráfego Pago para E-commerce | @nandacora" />
+    <meta property="og:description" content="Gestão de tráfego pago para e-commerces com produtos próprios que querem crescer com previsibilidade. Tráfego atrai. Estrutura converte. Método escala." />
+    <meta property="og:image" content="https://www.nandacora.com.br/img/og-nandacora.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Fernanda, gestora de tráfego pago para e-commerce" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Gestão de Tráfego Pago para E-commerce | @nandacora" />
+    <meta name="twitter:description" content="Gestão de tráfego pago para e-commerces que querem crescer com previsibilidade." />
+    <meta name="twitter:image" content="https://www.nandacora.com.br/img/og-nandacora.jpg" />
+
+    <!-- Ícones -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/icon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/icon-180.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Fontes self-hosted: pré-carrega os subsets latin usados na dobra -->
+    <link rel="preload" href="/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+    <link rel="preconnect" href="https://connect.facebook.net" />
+
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -18,15 +71,150 @@
     fbq('track', 'PageView');
     </script>
     <!-- End Meta Pixel Code -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://www.nandacora.com.br/#website",
+          "url": "https://www.nandacora.com.br/",
+          "name": "Nandacora",
+          "inLanguage": "pt-BR",
+          "publisher": { "@id": "https://www.nandacora.com.br/#organization" }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://www.nandacora.com.br/#organization",
+          "name": "Nandacora",
+          "alternateName": "@nandacora",
+          "url": "https://www.nandacora.com.br/",
+          "logo": "https://www.nandacora.com.br/img/icon-512.png",
+          "image": "https://www.nandacora.com.br/img/og-nandacora.jpg",
+          "description": "Gestão de tráfego pago e estratégia de funil para e-commerces com produtos próprios.",
+          "founder": { "@id": "https://www.nandacora.com.br/#fernanda" },
+          "areaServed": { "@type": "Country", "name": "Brasil" },
+          "sameAs": [
+            "https://www.instagram.com/nandacora/",
+            "https://www.tiktok.com/@nandacora",
+            "https://www.linkedin.com/in/nandacora/"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "telephone": "+55-62-9624-2626",
+            "availableLanguage": ["Portuguese"],
+            "areaServed": "BR"
+          }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://www.nandacora.com.br/#fernanda",
+          "name": "Fernanda",
+          "alternateName": "@nandacora",
+          "jobTitle": "Gestora de tráfego pago para e-commerce",
+          "url": "https://www.nandacora.com.br/",
+          "image": "https://www.nandacora.com.br/img/fernanda-cora-especialista-trafego-pago-800.jpg",
+          "worksFor": { "@id": "https://www.nandacora.com.br/#organization" },
+          "knowsAbout": [
+            "Tráfego pago",
+            "Meta Ads",
+            "Google Ads",
+            "E-commerce",
+            "CRO",
+            "CRM",
+            "Estratégia de funil"
+          ],
+          "sameAs": [
+            "https://www.instagram.com/nandacora/",
+            "https://www.tiktok.com/@nandacora",
+            "https://www.linkedin.com/in/nandacora/"
+          ]
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.nandacora.com.br/#service",
+          "name": "Gestão de tráfego pago para e-commerce",
+          "serviceType": "Gestão de tráfego pago",
+          "description": "Gestão de campanhas de tráfego pago para e-commerces com produtos próprios, partindo do diagnóstico do funil: tráfego, conversão e retenção. Inclui estratégia de campanhas baseada na jornada do cliente, otimização contínua, reports semanais e reuniões estratégicas.",
+          "provider": { "@id": "https://www.nandacora.com.br/#organization" },
+          "areaServed": { "@type": "Country", "name": "Brasil" },
+          "audience": {
+            "@type": "BusinessAudience",
+            "name": "E-commerces com produtos próprios"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.nandacora.com.br/#webpage",
+          "url": "https://www.nandacora.com.br/",
+          "name": "Gestão de Tráfego Pago para E-commerce | @nandacora",
+          "description": "Gestão de tráfego pago para e-commerces com produtos próprios que querem crescer com previsibilidade.",
+          "isPartOf": { "@id": "https://www.nandacora.com.br/#website" },
+          "about": { "@id": "https://www.nandacora.com.br/#service" },
+          "primaryImageOfPage": "https://www.nandacora.com.br/img/fernanda-cora-gestao-trafego-ecommerce-1000.jpg",
+          "inLanguage": "pt-BR"
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://www.nandacora.com.br/#faq",
+          "isPartOf": { "@id": "https://www.nandacora.com.br/#webpage" },
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "O que é gestão de tráfego pago para e-commerce?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Gestão de tráfego pago para e-commerce é o trabalho de planejar, executar e otimizar campanhas de anúncios para levar o público certo até a loja virtual. Na prática, envolve estratégia de funil, definição de público, direcionamento de criativos, controle de orçamento e leitura de dados — com o objetivo de transformar investimento em venda de forma previsível, e não em picos isolados de faturamento."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Qual a diferença entre gestão de tráfego e só subir campanhas?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Subir campanha é execução; gestão é método. A gestão parte do funil inteiro — o que acontece antes do clique, na conversão dentro da loja e depois da venda. Quando a estrutura não está clara, aumentar a verba apenas acelera os gargalos que já existiam, e o resultado continua dependendo de tentativa e erro."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Para quem esse serviço é indicado?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Para e-commerces com produtos próprios que já vendem online e querem crescer com estrutura. Faz sentido principalmente para quem sente que o crescimento ficou instável, para quem decide onde investir no achismo e para quem procura uma parceria com método — não apenas alguém que executa campanha no gerenciador."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Como funciona o início do trabalho?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "O primeiro passo é o diagnóstico: mapear os gargalos de tráfego, conversão e retenção antes de mexer na verba. Em seguida vem a estratégia de campanhas baseada na jornada do cliente e, depois, a otimização contínua, com reports semanais e reuniões estratégicas para acompanhar os números."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Em quanto tempo aparecem os resultados?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Depende do estágio da loja, do histórico de dados da conta e do investimento disponível. Por isso o trabalho começa pelo diagnóstico, e não por uma promessa de prazo: entender onde estão os gargalos é o que define quanto tempo leva para o funil sustentar um crescimento consistente."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <!-- Meta Pixel NoScript -->
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1991317094793069&ev=PageView&noscript=1"
+    alt=""
     /></noscript>
     <!-- End Meta Pixel NoScript -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-
