@@ -83,7 +83,7 @@ function Button({ children, outline = false, className = "", showArrow = true }:
       onClick={trackFormClick}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-medium tracking-wide transition-all duration-300 hover:scale-[1.02] ${
+      className={`group inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-medium tracking-wide transition-all duration-300 motion-safe:hover:scale-[1.02] ${
         outline
           ? 'border border-ink text-ink hover:bg-ink hover:text-surface'
           : 'bg-brand text-white hover:bg-brand-light shadow-md hover:shadow-lg'
@@ -91,7 +91,7 @@ function Button({ children, outline = false, className = "", showArrow = true }:
     >
       {children}
       {showArrow && (
-        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+        <ArrowRight className="h-4 w-4 transition-transform duration-300 motion-safe:group-hover:translate-x-1" aria-hidden="true" />
       )}
     </a>
   );
@@ -228,7 +228,7 @@ export default function App() {
 
             <FadeInHero delay={0.2} className="relative mx-auto w-full max-w-md lg:max-w-none">
               {/* Imagem do Atendimento */}
-              <div className="aspect-[4/5] overflow-hidden rounded-2xl bg-surface/50 shadow-sm transition-transform duration-700 hover:scale-[1.01]">
+              <div className="aspect-[4/5] overflow-hidden rounded-2xl bg-surface/50 shadow-sm transition-transform duration-700 motion-safe:hover:scale-[1.01]">
                 <picture>
                   <source
                     type="image/webp"
@@ -280,8 +280,8 @@ export default function App() {
             ].map((item, index) => (
               <Fragment key={index}>
                 <FadeIn delay={0.1 * index}>
-                  <div className="group flex h-full items-start gap-4 rounded-2xl bg-white/5 p-6 border border-white/10 hover:border-brand-light/30 hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-md">
-                    <CheckCircle2 className="h-6 w-6 shrink-0 text-brand mt-0.5 transition-transform duration-300 group-hover:scale-110 group-hover:text-brand-light" aria-hidden="true" />
+                  <div className="group flex h-full items-start gap-4 rounded-2xl bg-white/5 p-6 border border-white/10 hover:border-brand-light/30 hover:bg-white/10 motion-safe:hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-md">
+                    <CheckCircle2 className="h-6 w-6 shrink-0 text-brand mt-0.5 transition-transform duration-300 motion-safe:group-hover:scale-110 group-hover:text-brand-light" aria-hidden="true" />
                     <p className="text-lg text-surface/90 transition-colors group-hover:text-white">{item}</p>
                   </div>
                 </FadeIn>
@@ -344,7 +344,7 @@ export default function App() {
             <div className="hidden md:block absolute top-10 left-[16%] right-[16%] h-px bg-brand/20 -z-10"></div>
 
             <FadeIn delay={0.1} className="relative z-10 flex flex-col items-center text-center group">
-              <div className="mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-md border border-brand/10 text-brand transition-all duration-300 group-hover:scale-110 group-hover:bg-brand group-hover:text-white">
+              <div className="mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-md border border-brand/10 text-brand transition-all duration-300 motion-safe:group-hover:scale-110 group-hover:bg-brand group-hover:text-white">
                 <BarChart3 className="h-8 w-8" aria-hidden="true" />
               </div>
               <h3 className="mb-3 font-sans text-sm font-bold uppercase tracking-wider text-brand">1. Diagnóstico</h3>
@@ -354,7 +354,7 @@ export default function App() {
             </FadeIn>
 
             <FadeIn delay={0.2} className="relative z-10 flex flex-col items-center text-center group">
-              <div className="mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-md border border-brand/10 text-brand transition-all duration-300 group-hover:scale-110 group-hover:bg-brand group-hover:text-white">
+              <div className="mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-md border border-brand/10 text-brand transition-all duration-300 motion-safe:group-hover:scale-110 group-hover:bg-brand group-hover:text-white">
                 <TrendingUp className="h-8 w-8" aria-hidden="true" />
               </div>
               <h3 className="mb-3 font-sans text-sm font-bold uppercase tracking-wider text-brand">2. Estratégia</h3>
@@ -364,7 +364,7 @@ export default function App() {
             </FadeIn>
 
             <FadeIn delay={0.3} className="relative z-10 flex flex-col items-center text-center group">
-              <div className="mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-md border border-brand/10 text-brand transition-all duration-300 group-hover:scale-110 group-hover:bg-brand group-hover:text-white">
+              <div className="mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-md border border-brand/10 text-brand transition-all duration-300 motion-safe:group-hover:scale-110 group-hover:bg-brand group-hover:text-white">
                 <Users className="h-8 w-8" aria-hidden="true" />
               </div>
               <h3 className="mb-3 font-sans text-sm font-bold uppercase tracking-wider text-brand">3. Otimização</h3>
@@ -381,7 +381,7 @@ export default function App() {
         <div className="mx-auto max-w-5xl px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <FadeIn>
-              <div className="aspect-square overflow-hidden rounded-full max-w-[400px] mx-auto border-8 border-surface shadow-md bg-surface/50 transition-transform duration-700 hover:scale-[1.02]">
+              <div className="aspect-square overflow-hidden rounded-full max-w-[400px] mx-auto border-8 border-surface shadow-md bg-surface/50 transition-transform duration-700 motion-safe:hover:scale-[1.02]">
                 <picture>
                   <source
                     type="image/webp"
@@ -395,7 +395,7 @@ export default function App() {
                     width={800}
                     height={800}
                     alt="Fernanda analisando dados de campanhas de tráfego pago no notebook"
-                    className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                    className="h-full w-full object-cover transition-transform duration-700 motion-safe:hover:scale-105"
                     loading="lazy"
                     decoding="async"
                   />
@@ -493,10 +493,10 @@ export default function App() {
                 onClick={trackFormClick}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-white text-ink px-8 py-4 font-bold tracking-wide transition-all duration-300 hover:scale-[1.02] hover:bg-surface shadow-lg hover:shadow-white/20"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-white text-ink px-8 py-4 font-bold tracking-wide transition-all duration-300 motion-safe:hover:scale-[1.02] hover:bg-surface shadow-lg hover:shadow-white/20"
               >
                 Solicitar proposta
-                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 motion-safe:group-hover:translate-x-1" aria-hidden="true" />
               </a>
             </div>
           </FadeIn>
@@ -537,12 +537,12 @@ export default function App() {
         onClick={trackWhatsAppClick}
         target="_blank"
         rel="noopener noreferrer"
-        className="animate-pop-in fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition-transform hover:scale-110 active:scale-95"
+        className="animate-pop-in fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition-transform motion-safe:hover:scale-110 motion-safe:active:scale-95"
         aria-label="Falar com a Fernanda no WhatsApp"
       >
         <WhatsAppIcon className="h-7 w-7" />
         {/* Pulsing effect */}
-        <span className="absolute inset-0 z-[-1] rounded-full bg-[#25D366] opacity-40 animate-ping"></span>
+        <span className="absolute inset-0 z-[-1] rounded-full bg-[#25D366] opacity-40 motion-safe:animate-ping"></span>
       </a>
 
     </div>
