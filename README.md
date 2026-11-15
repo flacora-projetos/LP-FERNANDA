@@ -108,3 +108,7 @@ tag e arquivo HTML — os dois estão no repo, não remova.
 
 Uma propriedade de domínio (`sc-domain:nandacora.com.br`) cobriria www e apex de
 uma vez, mas exige um registro TXT no DNS.
+
+## Revisão de acessibilidade
+
+O conteúdo em revelação fica visível ao receber foco. A preferência por movimento reduzido desliga o pulso do atalho do WhatsApp e os deslocamentos decorativos. Para repetir a conferência, rode `npm run lint` e `npm run build`, abra a página e percorra os links com Tab em desktop e celular, com e sem movimento reduzido.
